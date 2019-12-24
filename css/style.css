@@ -1,0 +1,19 @@
+/* || General Styles */
+
+/* || Header and Main Navigation */
+
+/* || Utlities */
+
+.complete {
+    background: green;
+    color: darkgreen;
+}
+
+.delete-btn {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
