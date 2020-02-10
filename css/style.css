@@ -1,19 +1,114 @@
 /* || General Styles */
-
-/* || Header and Main Navigation */
-
-/* || Utlities */
-
-.complete {
-    background: green;
-    color: darkgreen;
+body {
+    background-color: #f5f5f5;
+    text-align: center;
 }
 
-.delete-btn {
+p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+}
+
+ul {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    list-style-type: none;
+    text-align: left;
+}
+
+/* || Header and Main Navigation */
+.box {
+    background-color: aqua;
+}
+
+.checkbox-container {
+    display: block;                 /* Displays the element like <p> */
+    position: relative;             /* Positions the element relative to its normal position */
+    padding-left: 35px;
+    /* margin-bottom: 12px; */
+    margin: 12px 0 12px 0;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;      /* "user-select" Specifies if the text of an element can be selected */
+    -moz-user-select: none;         /* Double-clicking on some text will select/highlight it, this prevents that */   
+    -ms-user-select: none;           
+    user-select: none;             
+}
+
+.checkmark { /* Create a custom checkbox */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eeeeee;
+}
+
+.title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#todo-list {
+    text-align: left;
+}
+
+/* || Utlities */
+.bttn {
     border: none;
     background-color: inherit;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
     display: inline-block;
+    font-size: 18px;
+    padding: 10px 15px;
+}
+
+.bottom-padding {
+    padding-bottom: 20px;
+}
+
+.bottom-margin {
+    margin-bottom: 25px;
+}
+
+.checkbox-container input { /* Hide the browser's default checkbox */
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkbox-container:hover input ~ .checkmark { /* On mouse-over, add a gray background color */
+    background-color: #cccccc;
+}
+
+.checkbox-container input:checked ~ .checkmark { /* When the checkbox is checked, add a blue background */
+    background-color: #2196f3;
+}
+
+.checkmark:after { /* Create the checkmark (hidden when not checked) */
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after { /* Show the checkmark when checked */
+    display: block;
+}
+
+.checkbox-container .checkmark:after { /* Style the checkmark */
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.complete {
+    background: rgb(132, 201, 132);
+    border: 1px solid rgb(132, 215, 132);
+    color: darkgreen;
 }

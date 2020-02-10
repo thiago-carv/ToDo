@@ -1,53 +1,62 @@
-/*
- * TODO:
- * Remove the bullet point from new items created
- * Use bootstrap to put everything on the page into proper columns
- * Make the text input and "Enter" button better looking
- * Make the "X" button better-looking and space it between the string inside the new item
- */
-
 let input = document.getElementById('user-input');
-let ul = document.getElementById('todo-list');
+// let ul = document.getElementById('todo-list');
+let div = document.getElementById('todo-list');
 let enterBtn = document.getElementById('enter');
-let items = document.getElementsByTagName('li');
+// let items = document.getElementsByTagName('li');
 
 /*
  * This function primarly creates and also manipulates the list items.
  * Inside this function are nested functions that toggle when the item has been completed
- * and removing it from the list after pressing the 'X' button. 
+ * and removing it from the list after...[TBD]
  */
 function createNewListItem() {
     // BEGIN - Create new list item
-    let item = document.createElement('li'); 
-    let itemValue = document.createTextNode(input.value);
-    item.appendChild(itemValue);
+    // let item = document.createElement('li');
+    let label = document.createElement('label');
+    label.className = "checkbox-container";
+    let inputText = document.createTextNode(input.value);
+    label.appendChild(inputText);
+    // item.appendChild(label);
     
-    if (itemValue.length > 0) {
-        ul.appendChild(item);
+    // Only append the new ToDo item if the string added is longer than 0 characters
+    if  (inputText.length > 0) {
+        // ul.appendChild(item);
+        div.appendChild(label);
         input.value = '';
     }
     // END - Create new list item
 
-    // BEGIN - Set list item as complete
-    function completeListItem() {
-        item.classList.toggle('complete'); // CSS class named .complete
-    }
 
-    item.addEventListener('click', completeListItem);
-    // END - Set list item as complete
+    // BEGIN - Create checkbox on list item
+    let checkbox = document.createElement('input');
+    checkbox.type = "checkbox";
+    let checkmark = document.createElement('span');
+    checkmark.className = "checkmark";
+    label.appendChild(checkbox);
+    label.appendChild(checkmark);
+    // END - Create checkbox on list item
 
     // BEGIN - Create delete button on list item
-    let deleteBtn = document.createElement('button');
-    deleteBtn.appendChild(document.createTextNode('X'));
-    item.appendChild(deleteBtn);
+    // let deleteBtn = document.createElement('button');
+    // deleteBtn.className = "bttn";
+    // deleteBtn.appendChild(document.createTextNode('X'));
+    // item.appendChild(deleteBtn);
 
-    deleteBtn.addEventListener('click', function(e) {
-        let btn = e.target;
-        if (btn.tagName.toUpperCase() == 'BUTTON') {
-            item.parentNode.removeChild(item);
-        }
-    });
+    // deleteBtn.addEventListener('click', function(e) {
+    //     let btn = e.target;
+    //     if (btn.tagName.toUpperCase() == 'BUTTON') {
+    //         item.parentNode.removeChild(item);
+    //     }
+    // });
     // END - Create delete button on list item
+
+    // BEGIN - Set list item as complete
+    // function completeListItem() {
+    //     item.classList.toggle('complete'); // CSS class named .complete
+    // }
+
+    // item.addEventListener('click', completeListItem);
+    // END - Set list item as complete
 }
 
 /*

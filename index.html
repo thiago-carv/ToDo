@@ -14,30 +14,39 @@
 
 <body>
     <div class="container">
-        <div class=row">
+        <div class="row box">
             <div id="col-sm-12">
-                <h1>To-Dos</h1>
+                <h1 class="title">To-Dos</h1>
+            </div>
+        </div>
+
+        <div class="row box">
+            <div class="col-sm-12">
+                <p>
+                    To add a new item to the list, write it in text area and press enter or hit the "Enter" button.
+                </p>
+                <p>
+                    To mark an item as completed, click on it and it'll turn green.
+                </p>
+                <p>
+                    To remove an item from the list, click on the "X".
+                </p>
+            </div>
+        </div>
+
+        <div class="row box bottom-margin">
+            <div class="col-sm-12 bottom-padding">
+                <input id="user-input" type="text" placeholder="Add a todo...">
+                <button id="enter" type="button">Enter</button>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-sm-12">
-                <p>
-                    To add a new item to the list, write it in and press enter or hit the "Add" button.
-                </p>
-                <p>
-                    To mark an item as complete, click on it and it'll turn green.
-                </p>
-                <p>
-                    To remove an item from the list, simply click on it.
-                </p>
-        
-                <input id="user-input" type="text" placeholder="Add an item...">
-                <button id="enter" type="button">Enter</button>
-        
-                <ul id="todo-list">
-                </ul>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4 box" id="todo-list">
+                <!-- <ul id="todo-list"></ul> -->
             </div>
+            <div class="col-sm-4"></div>
         </div>
     </div>
 
