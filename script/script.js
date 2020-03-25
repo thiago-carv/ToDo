@@ -1,22 +1,19 @@
 let input = document.getElementById('user-input');
-// let ul = document.getElementById('todo-list');
 let div = document.getElementById('todo-list');
 let enterBtn = document.getElementById('enter');
-// let items = document.getElementsByTagName('li');
 
 /*
- * This function primarly creates and also manipulates the list items.
- * Inside this function are nested functions that toggle when the item has been completed
- * and removing it from the list after...[TBD]
+ * This function creates and manipulates the elements on the todo list.
+ * Inside this function are nested functions that toggle when the item has been completed,
+ * that allow the list elementd to be edited,
+ * and...
  */
 function createNewListItem() {
-    // BEGIN - Create new list item
-    // let item = document.createElement('li');
+    // BEGIN - CREATE NEW INPUT ELEMENT
     let label = document.createElement('label');
     label.className = "checkbox-container";
     let inputText = document.createTextNode(input.value);
     label.appendChild(inputText);
-    // item.appendChild(label);
     
     // Only append the new ToDo item if the string added is longer than 0 characters
     if  (inputText.length > 0) {
@@ -24,17 +21,25 @@ function createNewListItem() {
         div.appendChild(label);
         input.value = '';
     }
-    // END - Create new list item
+    // END - CREATE NEW INPUT ELEMENT
 
-
-    // BEGIN - Create checkbox on list item
+    // BEGIN - CREATE CHECKBOX ON INPUT ELEMENT
     let checkbox = document.createElement('input');
     checkbox.type = "checkbox";
     let checkmark = document.createElement('span');
     checkmark.className = "checkmark";
     label.appendChild(checkbox);
     label.appendChild(checkmark);
-    // END - Create checkbox on list item
+    // END - CREATE CHECKBOX ON INPUT ELEMENT
+
+    // BEGIN - TOGGLING THE COMPLETION OF AN ITEM
+    checkbox.addEventListener('click', function(e) {
+        if (checkbox.checked == true) {
+            // Sends the element to the bottom of the list
+            div.appendChild(label);
+        }
+    });
+    // END - TOGGLING THE COMPLETION OF AN ITEM
 
     // BEGIN - Create delete button on list item
     // let deleteBtn = document.createElement('button');
@@ -75,5 +80,4 @@ function createNewListItemOnKeyPress(event) {
 }
 
 enterBtn.addEventListener('click', createNewListItemOnClick);
-
 input.addEventListener('keypress', createNewListItemOnKeyPress);
