@@ -2,15 +2,15 @@ What needs to get done:
     -HTML-
     * Double-check all classes and id names
     * Make sure everything is nested properly
-    * Check to see if the offset div is needed
     * Change the instructions -- too boring
 
     -CSS-
     * Finish the styling of the webpage
-    * Figure out why the properties in the body tag aren't displaying
-    * List items must be centered under the input box (make sure they're not going past the right side)
     * Organize things under proper sections
     * Try to keep everything set as a class
+    * Fix length of list items (way longer than the input box)
 
     -JS-
     * When an item is marked as completed (green), have it sent to the bottom of the list
+
+https://codepen.io/JohnPaulFich/pen/MXmzzM
