@@ -1,3 +1,7 @@
+/**
+ * BASED OFF OF: https://codepen.io/JohnPaulFich/pen/MXmzzM
+ */
+
 const input = document.getElementById('userInput');
 const enterButton = document.getElementById('enter');
 const list = document.getElementById('list');
@@ -18,6 +22,10 @@ function createNewListItem() {
     // BEGIN - MARK ITEM AS COMPLETE
     function complete() {
         listItem.classList.toggle('done');
+        // If listItem has class "done" put at bottom of list
+        if (listItem.classList.contains("done")) {
+            list.appendChild(listItem);
+        }
     }
 
     /* Allows for the item to be unmarked */
