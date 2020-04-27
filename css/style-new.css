@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-	background-color: #04A1BF;
+	background-color: #5995D9;
 	text-align: center;
 	font-family: 'Open Sans', sans-serif;
 }
@@ -27,10 +27,10 @@ li {
 	color: #ffffff;
 	text-transform: capitalize;
 	font-weight: 600;
-	border: 2px solid #025f70;
+	border: 2px solid #4472A6;
 	border-radius: 5px;
 	margin-bottom: 10px;
-	background: #4EB9CD;
+	background: #9EBDDF;
 	transition: all 0.75s ease;
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
@@ -39,7 +39,7 @@ li {
 }
 
 li:hover {
-	background: #76CFE0;
+	background: #69D196;
 }
 
 li > button {
@@ -61,25 +61,20 @@ input {
 /* Custom Styles */
 .title {
 	margin: 20px 0px;
-	font-weight: bold;	
+	font-weight: bold;
 }
 
-/* .instructions {
-	color: red;
-} */
-
 #first {
-	margin-top: 10px;
-	color: #FFCD5D;
+	color: #57DBFF;
 }
 
 #second {
-	color: #51DF70;
+	color: #D29591;
 
 }
 
 #third {
-	color: #025F70;
+	color: #566266;
 	margin-bottom: 30px;
 }
 
